@@ -3,11 +3,6 @@ Cat.color = "gray";
 Console.WriteLine(Cat.color);
 Cat.Meow();
 Cat.Eat();
-
-Tiger Tiger = new Tiger("red");
-Tiger.Meow();
-Tiger.Eat();
-Tiger.Hunting();
 class Cat
 {
     public string color;
@@ -26,17 +21,5 @@ class Cat
     public void Eat()
     {
         Console.WriteLine("eat!");
-    }
-}
-
-class Tiger : Cat {
-    public Tiger(string color) : base(color)
-    {
-        Console.WriteLine("Tiger created!");
-    }
-
-    public void Hunting()
-    {
-        Console.WriteLine("Start hunting!");
     }
 }
