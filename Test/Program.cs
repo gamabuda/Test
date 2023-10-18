@@ -1,25 +1,20 @@
-﻿Cat Cat = new Cat("red");
-Cat.color = "gray";
-Console.WriteLine(Cat.color);
-Cat.Meow();
-Cat.Eat();
-class Cat
+﻿using Newtonsoft.Json;
+using TestCore.Animals;
+
+Cat Cat = new Cat("red");
+Tiger Tiger = new Tiger("red");
+
+Tiger Tiger1 = AnimalFactory.CreateTiger("black");
+
+List<Cat> cats = new List<Cat>();
+
+cats.Add(Cat);
+cats.Add(Tiger);
+
+    foreach (Cat c in cats)
 {
-    public string color;
-
-    public Cat(string color)
-    {
-        this.color = color;
-        Console.WriteLine("Cat created!");
-    }
-
-    public void Meow()
-    {
-        Console.WriteLine("meow!");
-    }
-
-    public void Eat()
-    {
-        Console.WriteLine("eat!");
-    }
+    string json = JsonConvert.SerializeObject(c);
+    Console.WriteLine(json);
 }
+
+
